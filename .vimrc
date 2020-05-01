@@ -1,18 +1,21 @@
 set number
 set autoindent
-set shiftwidth=2
+set shiftwidth=4
 set smartindent
 set smarttab	
-set softtabstop=2
+set softtabstop=4
 set ignorecase
 set incsearch
-set tabstop=2
+set tabstop=4
 set expandtab
-set foldenable
-set foldmethod=indent
 set hls!
 set directory=$HOME/.vim/swapfiles//
+set nowrap
+set foldmethod=indent
 
-map <F2> :tabn<CR>
+map <F4> :tabn<CR>
 map <F3> :tabp<CR>
 map GY "+y
+
+" kill spaces
+autocmd BufWritePre *.pl,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
