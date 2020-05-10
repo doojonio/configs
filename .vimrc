@@ -21,6 +21,7 @@ map GY "+y
 " kill spaces
 autocmd BufWritePre *.pl,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
+autocmd BufNewFile *.pl :call NewPerlScript()
 
 map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
@@ -51,3 +52,14 @@ Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 colorscheme wombat256grf
+
+function! NewPerlScript()
+
+    call setline( line('$'), '#!/usr/bin/env perl' )
+    call append( line('$'), ['', 'use strict;'] )
+    call append( line('$'), [ 'use warnings;','','' ] )
+
+    call cursor( line('$'), 0 )
+
+    call feedkeys('i')
+endfunction
