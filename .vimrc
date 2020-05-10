@@ -9,6 +9,7 @@ set hls!
 set directory=$HOME/.vim/swapfiles//
 set nowrap
 set foldmethod=indent
+set cursorline
 
 set shiftwidth =4
 set softtabstop=4
