@@ -20,6 +20,7 @@ map GY "+y
 
 " kill spaces
 autocmd BufWritePre *.pl,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
+autocmd BufReadPre *.ts,*.js call TabEq2()
 
 map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
