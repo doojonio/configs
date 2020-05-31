@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'gryf/wombat256grf'
 Plug 'junegunn/vim-easy-align'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
