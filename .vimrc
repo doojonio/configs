@@ -11,6 +11,8 @@ set nowrap
 set foldmethod=indent
 set cursorline
 
+set autochdir
+
 set shiftwidth =4
 set softtabstop=4
 set tabstop    =4
@@ -18,6 +20,8 @@ set tabstop    =4
 map <F4> :tabn<CR>
 map <F3> :tabp<CR>
 map GY "+y
+
+imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
 
 " kill spaces
 autocmd BufWritePre *.pl,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
