@@ -22,9 +22,10 @@ map <F3> :tabp<CR>
 map GY "+y
 
 imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
+imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
 
 " kill spaces
-autocmd BufWritePre *.pl,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
+autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
 
