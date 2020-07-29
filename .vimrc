@@ -1,7 +1,7 @@
 set number
 set autoindent
 set smartindent
-set smarttab	
+set smarttab
 set ignorecase
 set incsearch
 set expandtab
@@ -23,10 +23,12 @@ map GY "+y
 
 imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
 imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
+imap ;dmp use Data::Dumper;<CR>print STDERR Dumper ;<Left>
 
 " kill spaces
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
+autocmd BufReadPre *.php set noexpandtab
 autocmd BufNewFile *.pl :call NewPerlScript()
 
 map M! :call TabEq2()<CR>
