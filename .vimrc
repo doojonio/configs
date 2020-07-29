@@ -17,13 +17,14 @@ set shiftwidth =4
 set softtabstop=4
 set tabstop    =4
 
+map <F2> :tabnew<CR>
 map <F4> :tabn<CR>
 map <F3> :tabp<CR>
 map GY "+y
 
 imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
 imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
-imap ;dmp use Data::Dumper;<CR>print STDERR Dumper ;<Left>
+imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper ;<Left>
 
 " kill spaces
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
