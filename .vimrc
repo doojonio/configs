@@ -29,7 +29,6 @@ imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper 
 " kill spaces
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
-autocmd BufReadPre *.php set noexpandtab
 autocmd BufNewFile *.pl :call NewPerlScript()
 
 map M! :call TabEq2()<CR>
@@ -58,6 +57,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'gryf/wombat256grf'
 Plug 'junegunn/vim-easy-align'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'tpope/vim-eunuch'
 
 call plug#end()
 
