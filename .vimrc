@@ -13,23 +13,31 @@ set cursorline
 
 set autochdir
 
-set shiftwidth =4
-set softtabstop=4
-set tabstop    =4
+set shiftwidth =2
+set softtabstop=2
+set tabstop    =2
 
 map <F2> :tabnew<CR>
 map <F4> :tabn<CR>
 map <F3> :tabp<CR>
 map GY "+y
 
-imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
-imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
-imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper ;<Left>
+function SetupOtrsHotkeys()
+  imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
+  imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
+  imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper ;<Left>
+endfunction
+
+function SetupPhpHotkeys()
+  imap ;dmp var_dump();<Left><Left>
+endfunction
 
 " kill spaces
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
+autocmd BufReadPre *.pm, *.pl, *.t call SetupOtrsHotkeys()
+autocmd BufReadPre *.php call SetupPhpHotkeys()
 
 map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
@@ -58,10 +66,11 @@ Plug 'gryf/wombat256grf'
 Plug 'junegunn/vim-easy-align'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-eunuch'
+Plug 'challenger-deep-theme/vim'
 
 call plug#end()
 
-colorscheme wombat256grf
+colorscheme challenger_deep
 
 function! NewPerlScript()
 
