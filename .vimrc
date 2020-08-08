@@ -63,6 +63,7 @@ nmap ga <Plug>(EasyAlign)
 call plug#begin('~/.vim/plugged')
 
 Plug 'gryf/wombat256grf'
+Plug 'endel/vim-github-colorscheme'
 Plug 'junegunn/vim-easy-align'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-eunuch'
