@@ -36,8 +36,9 @@ endfunction
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql %s/\s\+$//e
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
-autocmd BufReadPre *.pm, *.pl, *.t call SetupOtrsHotkeys()
+autocmd BufReadPre *.pm,*.pl,*.t call SetupOtrsHotkeys()
 autocmd BufReadPre *.php call SetupPhpHotkeys()
+autocmd BufReadPre *.tt se syntax=html
 
 map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
