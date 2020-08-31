@@ -119,7 +119,7 @@ fi
 alias please="sudo"
 alias d="docker"
 alias d-c="docker-compose"
-alias otrs="echo 'sudo -u otrs /opt/otrs/bin/otrs.'"
-alias otgit="sudo -u otrs git"
 alias surs="sudo -u otrs"
 alias aprest="echo 'restarting apache...';sudo systemctl restart apache2;echo 'done'";
+alias pd="perldoc"
+alias otrs-dcache="surs /opt/otrs/bin/otrs.Console.pl Maint::Cache::Delete"

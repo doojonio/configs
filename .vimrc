@@ -26,6 +26,7 @@ function SetupOtrsHotkeys()
   imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
   imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
   imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper ;<Left>
+  imap ;cnt use feature 'state'; state $COUNTER = 1; print STDERR '$COUNT = '.$COUNTER++."\n";
 endfunction
 
 function SetupPhpHotkeys()
@@ -39,6 +40,7 @@ autocmd BufNewFile *.pl :call NewPerlScript()
 autocmd BufReadPre *.pm,*.pl,*.t call SetupOtrsHotkeys()
 autocmd BufReadPre *.php call SetupPhpHotkeys()
 autocmd BufReadPre *.tt se syntax=html
+autocmd BufReadPre /opt/otrs/* call TabEq4()
 
 map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
@@ -84,9 +86,13 @@ function! NewPerlScript()
 
     call setline( line('$'), '#!/usr/bin/env perl' )
     call append( line('$'), ['', 'use strict;'] )
-    call append( line('$'), [ 'use warnings;','','' ] )
+    call append( line('$'), [ 'use warnings;' ] )
+    call append( line('$'), [ 'use v5.30;', '', '' ] )
 
     call cursor( line('$'), 0 )
 
     call feedkeys('i')
 endfunction
+
+hi Normal ctermbg=none
+
