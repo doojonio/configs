@@ -77,6 +77,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-eunuch'
 Plug 'challenger-deep-theme/vim'
+Plug 'vim-perl/vim-perl'
 
 call plug#end()
 
@@ -95,4 +96,4 @@ function! NewPerlScript()
 endfunction
 
 hi Normal ctermbg=none
-
+let perl_sub_signatures = 1
