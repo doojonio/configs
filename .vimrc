@@ -78,6 +78,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-eunuch'
 Plug 'challenger-deep-theme/vim'
 Plug 'vim-perl/vim-perl'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -95,5 +97,10 @@ function! NewPerlScript()
     call feedkeys('i')
 endfunction
 
+"PERL SIGNATURES
 hi Normal ctermbg=none
 let perl_sub_signatures = 1
+
+" NERD AUTOSTART
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
