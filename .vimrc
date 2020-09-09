@@ -80,6 +80,7 @@ Plug 'challenger-deep-theme/vim'
 Plug 'vim-perl/vim-perl'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 
