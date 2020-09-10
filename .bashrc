@@ -128,3 +128,4 @@ alias pd="perldoc"
 alias otrs-dcache="surs /opt/otrs/bin/otrs.Console.pl Maint::Cache::Delete"
 alias chacker-psql="docker exec -ti chacker psql -U chacker"
 alias xcopy="xclip -sel clip"
+alias g=git
