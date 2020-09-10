@@ -127,3 +127,4 @@ alias aprest="echo 'restarting apache...';sudo systemctl restart apache2;echo 'd
 alias pd="perldoc"
 alias otrs-dcache="surs /opt/otrs/bin/otrs.Console.pl Maint::Cache::Delete"
 alias chacker-psql="docker exec -ti chacker psql -U chacker"
+alias g=git
