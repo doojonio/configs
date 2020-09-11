@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export NODEJS_HOME=/usr/local/lib/nodejs
+export NODEJS_HOME=/usr/local/lib/node
 export PATH=$PATH:$NODEJS_HOME/bin;
 
 alias please="sudo"
@@ -127,4 +127,5 @@ alias aprest="echo 'restarting apache...';sudo systemctl restart apache2;echo 'd
 alias pd="perldoc"
 alias otrs-dcache="surs /opt/otrs/bin/otrs.Console.pl Maint::Cache::Delete"
 alias chacker-psql="docker exec -ti chacker psql -U chacker"
+alias xcopy="xclip -sel clip"
 alias g=git
