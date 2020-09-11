@@ -81,6 +81,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -105,3 +106,4 @@ let perl_sub_signatures = 1
 " NERD AUTOSTART
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
+let g:ycm_autoclose_preview_window_after_completion = 1
