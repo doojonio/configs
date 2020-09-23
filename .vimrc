@@ -107,3 +107,9 @@ let perl_sub_signatures = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+set hlsearch
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
+
+hi Visual term=reverse cterm=reverse guibg=Grey
