@@ -95,7 +95,7 @@ nmap ga <Plug>(EasyAlign)
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql FixWhitespace
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
-autocmd BufReadPre *.pm,*.pl,*.t call SetupOtrsHotkeys()
+autocmd BufReadPre /opt/otrs/*.pm,/opt/otrs/*.pl,/opt/otrs/*.t call SetupOtrsHotkeys()
 autocmd BufReadPre *.php call SetupPhpHotkeys()
 autocmd BufReadPre *.tt se syntax=html
 autocmd BufReadPre /opt/otrs/* call TabEq4()
