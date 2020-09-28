@@ -20,6 +20,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -99,6 +100,7 @@ autocmd BufReadPre /opt/otrs/*.pm,/opt/otrs/*.pl,/opt/otrs/*.t call SetupOtrsHot
 autocmd BufReadPre *.php call SetupPhpHotkeys()
 autocmd BufReadPre *.tt se syntax=html
 autocmd BufReadPre /opt/otrs/* call TabEq4()
+autocmd BufReadPre *.log.?* se syntax=log
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 "----------------------------------------"
