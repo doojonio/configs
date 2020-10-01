@@ -21,6 +21,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'rakr/vim-one'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -111,7 +112,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 "----------------------------------------
 " Setup colors
 "----------------------------------------
-colorscheme challenger_deep
+colorscheme one
+set background=dark
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
