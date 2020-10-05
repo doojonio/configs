@@ -118,4 +118,4 @@ hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 hi Visual term=reverse cterm=reverse guibg=Grey
-
+hi Pmenu ctermfg=15 ctermbg=0
