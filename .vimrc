@@ -26,11 +26,14 @@ call plug#end()
 "----------------------------------------"
 " Helpers declaration
 "----------------------------------------"
+function SetupPerlHotkeys()
+  imap ;ddp use DDP; p ;<Left>
+endfunction
+
 function SetupOtrsHotkeys()
   imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
   imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
-  imap ;dmp use Data::Dumper; $Data::Dumper::Sortkeys = 1;<CR>print STDERR Dumper ;<Left>
-  imap ;cnt use feature 'state'; state $COUNTER = 1; print STDERR '$COUNT = '.$COUNTER++."\n";
+  call SetupPerlHotkeys()
 endfunction
 
 function SetupPhpHotkeys()
@@ -98,6 +101,7 @@ autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql FixWhit
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
 autocmd BufReadPre /opt/otrs/*.pm,/opt/otrs/*.pl,/opt/otrs/*.t call SetupOtrsHotkeys()
+autocmd BufReadPre *.pm,*.pl,*.t :call SetupPerlHotkeys()
 autocmd BufReadPre *.php call SetupPhpHotkeys()
 autocmd BufReadPre *.tt se syntax=html
 autocmd BufReadPre /opt/otrs/* call TabEq4()
