@@ -22,6 +22,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'rakr/vim-one'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -94,6 +95,8 @@ map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+nmap gut :GitGutterToggle<CR>
+nmap lgut :GitGutterLineHighlightsToggle<CR>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
