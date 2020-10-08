@@ -28,8 +28,6 @@ call plug#end()
 "----------------------------------------"
 function SetupPerlSettings()
   imap ;ddp use DDP; p ;<Left>
-  let g:perl_sub_signatures = 1
-  let g:perl_fold=1
 endfunction
 
 function SetupOtrsHotkeys()
@@ -82,6 +80,7 @@ set hlsearch
 set shiftwidth =2
 set softtabstop=2
 set tabstop    =2
+set foldlevel  =10
 "----------------------------------------"
 " Hotkeys
 "----------------------------------------"
@@ -112,6 +111,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Variables for plugin's settings
 "----------------------------------------"
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:perl_sub_signatures = 1
 "----------------------------------------
 " Setup colors
 "----------------------------------------
