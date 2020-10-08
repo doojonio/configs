@@ -22,19 +22,20 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'rakr/vim-one'
-Plug 'airblade/vim-gitgutter'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
 "----------------------------------------"
-function SetupPerlHotkeys()
+function SetupPerlSettings()
   imap ;ddp use DDP; p ;<Left>
+  let g:perl_sub_signatures = 1
+  let g:perl_fold=1
 endfunction
 
 function SetupOtrsHotkeys()
   imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
   imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
-  call SetupPerlHotkeys()
+  call SetupPerlSettings()
 endfunction
 
 function SetupPhpHotkeys()
@@ -54,15 +55,12 @@ function! TabEq4()
 endfunction
 
 function! NewPerlScript()
-
-    call setline( line('$'), '#!/usr/bin/env perl' )
-    call append( line('$'), ['', 'use strict;'] )
-    call append( line('$'), [ 'use warnings;' ] )
-    call append( line('$'), [ 'use v5.30;', '', '' ] )
-
-    call cursor( line('$'), 0 )
-
-    call feedkeys('i')
+  call setline( line('$'), '#!/usr/bin/env perl' )
+  call append( line('$'), ['', 'use strict;'] )
+  call append( line('$'), [ 'use warnings;' ] )
+  call append( line('$'), [ 'use v5.30;', '', '' ] )
+  call cursor( line('$'), 0 )
+  call feedkeys('i')
 endfunction
 "----------------------------------------"
 " Some in-vim settings
@@ -95,8 +93,7 @@ map M! :call TabEq2()<CR>
 map M@ :call TabEq4()<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-nmap gut :GitGutterToggle<CR>
-nmap lgut :GitGutterLineHighlightsToggle<CR>
+nmap <F12> :syntax sync fromstart<CR>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
@@ -104,7 +101,7 @@ autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql FixWhit
 autocmd BufReadPre *.ts,*.js call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
 autocmd BufReadPre /opt/otrs/*.pm,/opt/otrs/*.pl,/opt/otrs/*.t call SetupOtrsHotkeys()
-autocmd BufReadPre *.pm,*.pl,*.t :call SetupPerlHotkeys()
+autocmd BufReadPre *.pm,*.pl,*.t :call SetupPerlSettings()
 autocmd BufReadPre *.php call SetupPhpHotkeys()
 autocmd BufReadPre *.tt se syntax=html
 autocmd BufReadPre /opt/otrs/* call TabEq4()
@@ -114,7 +111,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
-let perl_sub_signatures = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 "----------------------------------------
 " Setup colors
