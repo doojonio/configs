@@ -22,6 +22,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'rakr/vim-one'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
