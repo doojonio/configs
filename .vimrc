@@ -23,6 +23,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -72,7 +73,7 @@ set ignorecase
 set incsearch
 set expandtab
 set hls!
-set directory=$HOME/.vim/swapfiles//
+set directory=/tmp//
 set nowrap
 set foldmethod=indent
 set cursorline
