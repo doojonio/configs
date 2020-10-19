@@ -24,6 +24,7 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -114,6 +115,20 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "----------------------------------------"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:perl_sub_signatures = 1
+"----------------------------------------
+" Syntastic
+"----------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 1
+let g:syntastic_perl_checkers            = ['perl']
+let g:syntastic_enable_perl_checker      = 1
+let g:syntastic_quiet_messages           = { "type": "style"  }
 "----------------------------------------
 " Setup colors
 "----------------------------------------
