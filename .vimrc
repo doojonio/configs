@@ -25,6 +25,8 @@ Plug 'rakr/vim-one'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
+Plug 'mattn/emmet-vim'
+Plug 'yko/mojo.vim'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -129,6 +131,10 @@ let g:syntastic_check_on_wq              = 1
 let g:syntastic_perl_checkers            = ['perl']
 let g:syntastic_enable_perl_checker      = 1
 let g:syntastic_quiet_messages           = { "type": "style"  }
+"----------------------------------------
+" Emmet
+"----------------------------------------
+let g:user_emmet_leader_key=','
 "----------------------------------------
 " Setup colors
 "----------------------------------------
