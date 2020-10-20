@@ -131,6 +131,7 @@ let g:syntastic_check_on_wq              = 1
 let g:syntastic_perl_checkers            = ['perl']
 let g:syntastic_enable_perl_checker      = 1
 let g:syntastic_quiet_messages           = { "type": "style"  }
+let g:syntastic_perl_lib_path            = [ '/opt/otrs/', '/opt/otrs/Custom/', '/opt/otrs/Kernel/cpan-lib/' ]
 "----------------------------------------
 " Emmet
 "----------------------------------------
