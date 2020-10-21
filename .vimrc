@@ -139,8 +139,7 @@ let g:user_emmet_leader_key=','
 "----------------------------------------
 " Setup colors
 "----------------------------------------
-colorscheme one
-set background=dark
+colorscheme challenger_deep
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
