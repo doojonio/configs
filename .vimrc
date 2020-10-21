@@ -27,6 +27,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
 Plug 'yko/mojo.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -76,16 +77,17 @@ set ignorecase
 set incsearch
 set expandtab
 set hls!
-set directory=/tmp//
+set directory   =/tmp//
 set nowrap
-set foldmethod=indent
+set foldmethod  =indent
 set cursorline
 set autochdir
 set hlsearch
-set shiftwidth =2
-set softtabstop=2
-set tabstop    =2
-set foldlevel  =10
+set shiftwidth  =2
+set softtabstop =2
+set tabstop     =2
+set foldlevel   =10
+set laststatus  =2
 "----------------------------------------"
 " Hotkeys
 "----------------------------------------"
@@ -123,6 +125,9 @@ let g:perl_sub_signatures = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
