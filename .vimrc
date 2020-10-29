@@ -134,6 +134,7 @@ autocmd BufReadPre /opt/otrs/* call TabEq4()
 autocmd BufReadPre *.log.?* se syntax=log
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
+autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
@@ -145,6 +146,8 @@ let g:perl_sub_signatures = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_mode_map = { 'passive_filetypes': ['rust']  }
 
 let g:syntastic_python_checkers = ['python']
 let g:syntastic_python_python_exec = 'python3'

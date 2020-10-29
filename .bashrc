@@ -118,7 +118,8 @@ if ! shopt -oq posix; then
 fi
 
 export NODEJS_HOME=/usr/local/lib/node
-export PATH=$PATH:$NODEJS_HOME/bin;
+export RUST_HOME=/home/anton/.cargo/
+export PATH=$PATH:$NODEJS_HOME/bin:$RUST_HOME/bin;
 
 alias please="sudo"
 alias d="docker"
