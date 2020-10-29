@@ -27,6 +27,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
 Plug 'yko/mojo.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -34,6 +36,22 @@ call plug#end()
 function SetupPerlSettings()
   imap ;ddp use DDP; p ;<Left>
 endfunction
+
+" Run tidyall on the current buffer. If an error occurs, show it and leave it
+" in tidyall.ERR, and undo any changes.
+command! TidyAll :call TidyAll()
+function! TidyAll()
+    let cur_pos = getpos( '.' )
+    let cmdline = ':1,$!tidyall --mode editor --pipe %:p 2> tidyall.ERR'
+    execute( cmdline )
+    if v:shell_error
+        echo "\nContents of tidyall.ERR:\n\n" . system( 'cat tidyall.ERR' )
+        silent undo
+    endif
+    call system( 'rm tidyall.ERR' )
+    call setpos( '.', cur_pos )
+endfunction
+map <leader>t :TidyAll<cr>
 
 function SetupOtrsHotkeys()
   imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
@@ -76,28 +94,32 @@ set ignorecase
 set incsearch
 set expandtab
 set hls!
-set directory=/tmp//
+set directory   =/tmp//
 set nowrap
-set foldmethod=indent
+set foldmethod  =indent
 set cursorline
 set autochdir
 set hlsearch
-set shiftwidth =2
-set softtabstop=2
-set tabstop    =2
-set foldlevel  =10
+set shiftwidth  =2
+set softtabstop =2
+set tabstop     =2
+set foldlevel   =10
+set laststatus  =2
 "----------------------------------------"
 " Hotkeys
 "----------------------------------------"
-map <F2> :tabnew<CR>
-map <F4> :tabn<CR>
-map <F3> :tabp<CR>
-map GY "+y
-map M! :call TabEq2()<CR>
-map M@ :call TabEq4()<CR>
+nmap <F2> :tabnew<CR>
+nmap <F4> :tabn<CR>
+nmap <F3> :tabp<CR>
+xmap GY "+y
+nmap M! :call TabEq2()<CR>
+nmap M@ :call TabEq4()<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+nmap gb :Git blame<CR>
 nmap <F12> :syntax sync fromstart<CR>
+nmap J <C-E>
+nmap K <C-Y>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
@@ -123,6 +145,9 @@ let g:perl_sub_signatures = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
