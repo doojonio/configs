@@ -83,6 +83,19 @@ function! NewPerlScript()
   call cursor( line('$'), 0 )
   call feedkeys('i')
 endfunction
+
+" otrs open files by using short monikers
+function! O(file_moniker)
+  let l:path = '/opt/otrs/' . a:file_moniker
+
+  for moniker in keys(g:otrs_short_monikers)
+    if l:path =~ moniker
+      let l:path = substitute(l:path, moniker, g:otrs_short_monikers[moniker], "g")
+    endif
+  endfor
+
+  execute "e " . l:path
+endfunction
 "----------------------------------------"
 " Some in-vim settings
 "----------------------------------------"
@@ -122,6 +135,7 @@ nmap J 6<C-E>
 nmap K 6<C-Y>
 nmap G> 50<C-w>>
 nmap G< 50<C-w><
+nmap go :call O("c:k:s:")<Left><Left>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
@@ -142,6 +156,8 @@ autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 "----------------------------------------"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:perl_sub_signatures = 1
+
+let g:otrs_short_monikers = {'c:': 'Custom/', 'k:': 'Kernel/', 's:':'System/', 'm:':'Modules/', 't:': 'Ticket/' }
 "----------------------------------------
 " Syntastic
 "----------------------------------------
