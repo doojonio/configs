@@ -118,8 +118,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nmap gb :Git blame<CR>
 nmap <F12> :syntax sync fromstart<CR>
-nmap J <C-E>
-nmap K <C-Y>
+nmap J 6<C-E>
+nmap K 6<C-Y>
+nmap G> 50<C-w>>
+nmap G< 50<C-w><
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
