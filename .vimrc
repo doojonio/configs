@@ -94,6 +94,12 @@ function! O(file_moniker)
     endif
   endfor
 
+  if l:path !~ '\.\w\+$'
+    let l:path .= ".pm"
+  endif
+
+  let l:path = substitute(l:path, '/\(\w\+\)\(\.\w\+\)', '/\u\1\2', '')
+
   execute "e " . l:path
 endfunction
 "----------------------------------------"
