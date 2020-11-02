@@ -29,6 +29,7 @@ Plug 'mattn/emmet-vim'
 Plug 'yko/mojo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/csv.vim'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
