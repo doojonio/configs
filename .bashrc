@@ -127,3 +127,4 @@ alias d-c="docker-compose"
 alias xcopy="xclip -sel clip"
 alias ap.r="sudo apachectl graceful"
 alias ap.s="sudo apachectl start"
+export UID
