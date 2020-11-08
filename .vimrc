@@ -33,6 +33,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'chrisbra/csv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'pearofducks/ansible-vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'SirVer/ultisnips'
+Plug 'akretion/vim-odoo-snippets'
+Plug 'mhartington/vim-angular2-snippets'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -163,6 +167,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
+autocmd BufReadPost,BufNewFile *.xml,*.py call TabEq4()
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
@@ -171,6 +176,10 @@ let g:perl_sub_signatures = 1
 
 let g:otrs_short_monikers = {'c:': 'Custom/', 'k:': 'Kernel/', 's:':'System/', 'm:':'Modules/', 't:': 'Ticket/' }
 let g:gitgutter_async = 0
+
+let g:UltiSnipsExpandTrigger=";q"
+let g:UltiSnipsJumpForwardTrigger=";b"
+let g:UltiSnipsJumpBackwardTrigger=";z"
 "----------------------------------------
 " Syntastic
 "----------------------------------------
