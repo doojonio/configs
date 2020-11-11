@@ -93,7 +93,7 @@ function! NewPerlScript()
 endfunction
 
 " otrs open files by using short monikers
-function! O(file_moniker)
+function! OtrsFile(file_moniker)
   let l:path = '/opt/otrs/' . a:file_moniker
 
   for moniker in keys(g:otrs_short_monikers)
@@ -149,7 +149,8 @@ nmap J 6<C-E>
 nmap K 6<C-Y>
 nmap G> 50<C-w>>
 nmap G< 50<C-w><
-nmap go :call O("c:k:s:")<Left><Left>
+nmap go :call OtrsFile("c:k:s:")<Left><Left>
+nmap gd :YcmCompleter GoToDefinition<CR>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
@@ -167,7 +168,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
-autocmd BufReadPost,BufNewFile *.xml,*.py call TabEq4()
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
@@ -177,7 +177,7 @@ let g:perl_sub_signatures = 1
 let g:otrs_short_monikers = {'c:': 'Custom/', 'k:': 'Kernel/', 's:':'System/', 'm:':'Modules/', 't:': 'Ticket/' }
 let g:gitgutter_async = 0
 
-let g:UltiSnipsExpandTrigger=";q"
+let g:UltiSnipsExpandTrigger=";s"
 let g:UltiSnipsJumpForwardTrigger=";b"
 let g:UltiSnipsJumpBackwardTrigger=";z"
 "----------------------------------------
