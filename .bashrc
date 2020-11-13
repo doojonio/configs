@@ -122,6 +122,7 @@ export RUST_HOME=/home/anton/.cargo/
 export PATH=$PATH:$NODEJS_HOME/bin:$RUST_HOME/bin;
 
 export SPTS=`tty | awk '{split($1, r, "/"); print r[4]+1}'`
+export TO="/dev/pts/$SPTS"
 
 alias please="sudo"
 alias d="docker"

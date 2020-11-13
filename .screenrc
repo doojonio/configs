@@ -3,6 +3,13 @@ hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 altscreen on
 
+bind j focus down
+bind k focus up
+bind l focus right
+bind h focus left
+
+rendition so kb
+
 screen -t working
 screen -t output
 screen -t something
