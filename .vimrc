@@ -168,6 +168,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
+autocmd BufReadPost *.xml call TabEq4()
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
