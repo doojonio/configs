@@ -2,3 +2,17 @@ startup_message off
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 altscreen on
+
+screen -t working
+screen -t output
+screen -t something
+
+select 0
+split
+focus
+select 1
+resize -v 20%
+split -v
+focus
+select 2
+focus

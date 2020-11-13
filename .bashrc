@@ -121,6 +121,8 @@ export NODEJS_HOME=/usr/local/lib/node
 export RUST_HOME=/home/anton/.cargo/
 export PATH=$PATH:$NODEJS_HOME/bin:$RUST_HOME/bin;
 
+export SPTS=`tty | awk '{split($1, r, "/"); print r[4]+1}'`
+
 alias please="sudo"
 alias d="docker"
 alias d-c="docker-compose"
