@@ -10,7 +10,7 @@ bind h focus left
 
 rendition so kb
 
-screen -t working
+screen -t ranger ranger
 screen -t output
 screen -t something
 
