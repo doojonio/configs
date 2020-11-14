@@ -14,7 +14,6 @@ Plug 'gryf/wombat256grf'
 Plug 'junegunn/vim-easy-align'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-eunuch'
-Plug 'challenger-deep-theme/vim'
 Plug 'vim-perl/vim-perl'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -37,6 +36,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'SirVer/ultisnips'
 Plug 'akretion/vim-odoo-snippets'
 Plug 'mhartington/vim-angular2-snippets'
+Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -212,7 +212,7 @@ let g:user_emmet_leader_key=','
 "----------------------------------------
 " Setup colors
 "----------------------------------------
-colorscheme challenger_deep
+colorscheme space-vim-dark
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
