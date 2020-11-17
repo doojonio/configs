@@ -37,6 +37,7 @@ Plug 'SirVer/ultisnips'
 Plug 'akretion/vim-odoo-snippets'
 Plug 'mhartington/vim-angular2-snippets'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'honza/vim-snippets'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -190,7 +191,7 @@ set statusline+=%*
 
 let g:syntastic_mode_map = { 'passive_filetypes': ['rust']  }
 
-let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_always_populate_loc_list = 1
