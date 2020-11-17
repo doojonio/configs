@@ -179,9 +179,12 @@ let g:perl_sub_signatures = 1
 let g:otrs_short_monikers = {'c:': 'Custom/', 'k:': 'Kernel/', 's:':'System/', 'm:':'Modules/', 't:': 'Ticket/' }
 let g:gitgutter_async = 0
 
-let g:UltiSnipsExpandTrigger=";s"
-let g:UltiSnipsJumpForwardTrigger=";b"
-let g:UltiSnipsJumpBackwardTrigger=";z"
+"----------------------------------------
+" UltiSnips
+"----------------------------------------
+let g:UltiSnipsExpandTrigger=";;"
+let g:UltiSnipsJumpForwardTrigger=";p"
+let g:UltiSnipsJumpBackwardTrigger=";."
 "----------------------------------------
 " Syntastic
 "----------------------------------------
