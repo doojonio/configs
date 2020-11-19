@@ -1,7 +1,7 @@
    ________________________________________
-  / Ladies and gentlemen,                  \
-  | this is                                |
-  \ CONFIGURATION FILES!  								 /
+   Ladies and gentlemen,
+   this is
+   CONFIGURATION FILES!
    ----------------------------------------
                          \                    ^    /^
                           \                  / \  // \
