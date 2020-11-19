@@ -38,6 +38,10 @@ Plug 'akretion/vim-odoo-snippets'
 Plug 'mhartington/vim-angular2-snippets'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'honza/vim-snippets'
+Plug 'heavenshell/vim-jsdoc', {
+            \ 'for': ['javascript', 'javascript.jsx','typescript'],
+            \ 'do': 'make install' }
+
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -152,11 +156,13 @@ nmap G> 50<C-w>>
 nmap G< 50<C-w><
 nmap go :call OtrsFile("c:k:s:")<Left><Left>
 nmap gd :YcmCompleter GoToDefinition<CR>
+nmap gjs :JsDoc<CR>
+xmap gjs :JsDoc<CR>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
 autocmd BufWritePre *.pl,*.t,*.pm,*.c,*.cpp,*.js,*.ts,*.java,*.php,*.sql FixWhitespace
-autocmd BufReadPre *.ts,*.js call TabEq2()
+autocmd BufReadPre *.ts call TabEq2()
 autocmd BufNewFile *.pl :call NewPerlScript()
 autocmd BufReadPre /opt/otrs/*.pm,/opt/otrs/*.pl,/opt/otrs/*.t call SetupOtrsHotkeys()
 autocmd BufReadPre *.pm,*.pl,*.t :call SetupPerlSettings()
@@ -170,6 +176,7 @@ autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
 autocmd BufReadPost *.xml call TabEq4()
+autocmd BufReadPost *.js call TabEq4()
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
