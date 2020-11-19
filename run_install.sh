@@ -7,6 +7,7 @@ CUR_DIR=`pwd`
 ln -s $CUR_DIR/.vimrc $HOME/;
 ln -s $CUR_DIR/.screenrc $HOME/;
 ln -s $CUR_DIR/.inputrc $HOME/;
+perl scripts/append_bashrc_suffix.pl
 
 # ranger
 mkdir -p $RANGER_DIR && \
