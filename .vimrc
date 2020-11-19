@@ -172,7 +172,6 @@ autocmd BufReadPre /opt/otrs/* call TabEq4()
 autocmd BufReadPre *.log.?* se syntax=log
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
-autocmd BufReadPre *.rs nmap gc :!cargo run<CR>
 autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
 autocmd BufReadPost *.xml call TabEq4()
@@ -224,6 +223,7 @@ let g:user_emmet_leader_key=','
 " Setup colors
 "----------------------------------------
 colorscheme space-vim-dark
+hi Normal ctermfg=123
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
