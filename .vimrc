@@ -207,7 +207,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 1
-let g:syntastic_perl_checkers            = ['perl']
+"let g:syntastic_perl_checkers            = ['perl']
 let g:syntastic_enable_perl_checker      = 1
 let g:syntastic_quiet_messages           = { "type": "style"  }
 let g:syntastic_perl_lib_path            = [ '/opt/otrs/', '/opt/otrs/Custom/', '/opt/otrs/Kernel/cpan-lib/' ]
@@ -223,7 +223,7 @@ let g:user_emmet_leader_key=','
 " Setup colors
 "----------------------------------------
 colorscheme space-vim-dark
-hi Normal ctermfg=123
+hi Normal ctermfg=147
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
