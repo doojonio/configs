@@ -9,7 +9,8 @@ bind k focus up
 bind l focus right
 bind h focus left
 
-rendition so kb
+rendition so "="
+caption string "%{= dd} "
 
 screen -t ranger
 screen -t output
@@ -24,3 +25,4 @@ split -v
 focus
 select 1
 focus
+
