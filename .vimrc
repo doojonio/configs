@@ -223,7 +223,7 @@ let g:user_emmet_leader_key=','
 " Setup colors
 "----------------------------------------
 colorscheme space-vim-dark
-hi Normal ctermfg=123
+hi Normal ctermfg=141
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
