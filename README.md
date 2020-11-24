@@ -1,4 +1,4 @@
-   ________________________________________
+   
    Ladies and gentlemen,
    this is
    CONFIGURATION FILES!
