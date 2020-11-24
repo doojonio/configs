@@ -24,5 +24,6 @@ resize -v 20%
 split -v
 focus
 select 1
+wrap off
 focus
 

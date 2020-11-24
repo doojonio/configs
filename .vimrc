@@ -67,8 +67,6 @@ endfunction
 map <leader>t :TidyAll<cr>
 
 function SetupOtrsHotkeys()
-  imap ;om $Kernel::OM->Get('Kernel::System::')<Left><Left>
-  imap ;err $Kernel::OM->Get('Kernel::System::Log')->Log(<CR>Priority => 'error',<CR>Message  => '',<CR>);<Up><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right>
   call SetupPerlSettings()
 endfunction
 
