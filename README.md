@@ -1,4 +1,4 @@
-   ________________________________________
+   
    Ladies and gentlemen,
    this is
    CONFIGURATION FILES!
@@ -19,5 +19,3 @@
                (    (--)          .----~-.\        \-`                 .~
                //__\\  \__ Ack!   ///.----..<        \             _ -~
               //    \\               ///-._ _ _ _ _ _ _{^ - - - - ~
-
-![wallpaper](pics/cd.jpeg)
