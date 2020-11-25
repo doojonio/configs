@@ -12,7 +12,7 @@ bind h focus left
 rendition so "="
 caption string "%{= dd} "
 
-screen -t ranger
+screen -t ranger ranger
 screen -t output
 screen -t something
 
