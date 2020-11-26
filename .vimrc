@@ -36,12 +36,11 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'SirVer/ultisnips'
 Plug 'akretion/vim-odoo-snippets'
 Plug 'mhartington/vim-angular2-snippets'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'honza/vim-snippets'
 Plug 'heavenshell/vim-jsdoc', {
             \ 'for': ['javascript', 'javascript.jsx','typescript'],
             \ 'do': 'make install' }
-Plug 'dracula/vim'
+Plug 'zefei/simple-dark'
 
 call plug#end()
 "----------------------------------------"
@@ -145,6 +144,7 @@ nmap <F2> :tabnew<CR>
 nmap <F4> :tabn<CR>
 nmap <F3> :tabp<CR>
 xmap GY "+y
+nmap GP "+p
 nmap M! :call TabEq2()<CR>
 nmap M@ :call TabEq4()<CR>
 xmap ga <Plug>(EasyAlign)
@@ -224,11 +224,11 @@ let g:user_emmet_leader_key=','
 "----------------------------------------
 " Setup colors
 "----------------------------------------
-colorscheme OceanicNext
-hi Normal ctermfg=147
-hi Normal ctermbg=none
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
-hi Visual term=reverse cterm=reverse guibg=Grey
 hi Pmenu ctermfg=15 ctermbg=0
-hi Comment ctermfg=152
+colorscheme simple-dark
+"hi Normal ctermfg=147
+"hi Normal ctermbg=none
+"hi Visual term=reverse cterm=reverse guibg=Grey
+"hi Comment ctermfg=152
