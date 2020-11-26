@@ -41,6 +41,7 @@ Plug 'honza/vim-snippets'
 Plug 'heavenshell/vim-jsdoc', {
             \ 'for': ['javascript', 'javascript.jsx','typescript'],
             \ 'do': 'make install' }
+Plug 'dracula/vim'
 
 call plug#end()
 "----------------------------------------"
@@ -68,6 +69,8 @@ map <leader>t :TidyAll<cr>
 
 function SetupOtrsHotkeys()
   call SetupPerlSettings()
+  imap ;om otrs-om;;
+  imap ;err otrs-error;;
 endfunction
 
 function SetupPhpHotkeys()
@@ -156,6 +159,7 @@ nmap go :call OtrsFile("c:k:s:")<Left><Left>
 nmap gd :YcmCompleter GoToDefinition<CR>
 nmap gjs :JsDoc<CR>
 xmap gjs :JsDoc<CR>
+nmap C :set paste!<CR>
 "----------------------------------------"
 " Auto-execution
 "----------------------------------------"
@@ -220,7 +224,7 @@ let g:user_emmet_leader_key=','
 "----------------------------------------
 " Setup colors
 "----------------------------------------
-colorscheme space-vim-dark
+colorscheme OceanicNext
 hi Normal ctermfg=147
 hi Normal ctermbg=none
 hi Search ctermbg=LightYellow

@@ -1,10 +1,10 @@
-snippet otrs-error "Log an error" b
+snippet otrs-error "Log an error"
 $Kernel::OM->Get('Kernel::System::Log')->Log(
 	Priority => 'error',
 	Message  => '$1',
 );
 endsnippet
 
-snippet otrs-om "Get object" b
-$Kernel::OM->Get('Kernel::System::$1');
+snippet otrs-om "Get object"
+$Kernel::OM->Get('Kernel::System::$1')$2;
 endsnippet
