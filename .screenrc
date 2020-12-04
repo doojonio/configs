@@ -9,20 +9,28 @@ bind k focus up
 bind l focus right
 bind h focus left
 
-rendition so "="
-caption string "%{= dd} "
+bind v eval "split -v" "focus right" "screen"
+bind s eval "split" "focus down" "screen"
+bind d eval "kill" "remove"
 
-screen -t ranger ranger
-screen -t output
-screen -t something
+bind = resize -v +20%
+bind - resize -v -20%
+bind . resize +20%
+bind , resize -20%
 
-select 0
-split
-focus
-select 2
-resize -v 20%
-split -v
-focus
-select 1
-focus
+#rendition so "="
+#caption string "%{= dd} "
 
+#screen -t ranger ranger
+#screen -t output
+#screen -t something
+#
+#select 0
+#split
+#focus
+#select 2
+#resize -v 20%
+#split -v
+#focus
+#select 1
+#focus

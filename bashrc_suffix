@@ -14,3 +14,4 @@ alias xcopy="xclip -sel clip"
 alias ap.r="sudo apachectl graceful"
 alias ap.s="sudo apachectl start"
 alias sn=screen
+alias rr=ranger

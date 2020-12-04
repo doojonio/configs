@@ -41,6 +41,7 @@ Plug 'heavenshell/vim-jsdoc', {
             \ 'for': ['javascript', 'javascript.jsx','typescript'],
             \ 'do': 'make install' }
 Plug 'zefei/simple-dark'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 "----------------------------------------"
@@ -70,6 +71,7 @@ function SetupOtrsHotkeys()
   call SetupPerlSettings()
   imap ;om otrs-om;;
   imap ;err otrs-error;;
+  let g:syntastic_perl_checkers       = ['perl']
 endfunction
 
 function SetupPhpHotkeys()
@@ -209,10 +211,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 1
-let g:syntastic_perl_checkers            = ['perl']
-let g:syntastic_enable_perl_checker      = 1
 let g:syntastic_quiet_messages           = { "type": "style"  }
-let g:syntastic_perl_lib_path            = [ '/opt/otrs/', '/opt/otrs/Custom/', '/opt/otrs/Kernel/cpan-lib/' ]
+
+let g:syntastic_perl_lib_path       = [ '/opt/otrs/', '/opt/otrs/Custom/', '/opt/otrs/Kernel/cpan-lib/' ]
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers       = ['perltidy']
 "----------------------------------------
 " CSV
 "----------------------------------------
