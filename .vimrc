@@ -10,39 +10,39 @@ endif
 " Setup plugins
 "----------------------------------------"
 call plug#begin('~/.vim/plugged')
-Plug 'gryf/wombat256grf'
-Plug 'junegunn/vim-easy-align'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'tpope/vim-eunuch'
-Plug 'vim-perl/vim-perl'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'ryanoasis/vim-devicons'
-Plug 'mtdl9/vim-log-highlighting'
-Plug 'rakr/vim-one'
-Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-syntastic/syntastic'
-Plug 'mattn/emmet-vim'
-Plug 'yko/mojo.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'plasticboy/vim-markdown'
-Plug 'chrisbra/csv.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'pearofducks/ansible-vim'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'SirVer/ultisnips'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 Plug 'akretion/vim-odoo-snippets'
-Plug 'mhartington/vim-angular2-snippets'
-Plug 'honza/vim-snippets'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'chrisbra/csv.vim'
+Plug 'gryf/wombat256grf'
 Plug 'heavenshell/vim-jsdoc', {
             \ 'for': ['javascript', 'javascript.jsx','typescript'],
             \ 'do': 'make install' }
-Plug 'zefei/simple-dark'
+Plug 'honza/vim-snippets'
+Plug 'itchyny/lightline.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'mattn/emmet-vim'
+Plug 'mhartington/vim-angular2-snippets'
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'pearofducks/ansible-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'preservim/nerdtree'
+Plug 'prettier/vim-prettier'
+Plug 'rakr/vim-one'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-
+Plug 'vim-perl/vim-perl'
+Plug 'vim-syntastic/syntastic'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'yko/mojo.vim'
+Plug 'zefei/simple-dark'
 call plug#end()
 "----------------------------------------"
 " Helpers declaration
@@ -180,6 +180,8 @@ autocmd BufWritePost * GitGutter
 autocmd BufReadPost * GitGutter
 autocmd BufReadPost *.xml call TabEq4()
 autocmd BufReadPost *.js call TabEq4()
+
+autocmd BufReadPre */billparser/*.py let g:syntastic_python_checkers = ['python']
 "----------------------------------------"
 " Variables for plugin's settings
 "----------------------------------------"
