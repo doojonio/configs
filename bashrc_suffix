@@ -1,6 +1,6 @@
 export NODEJS_HOME="$HOME/.local/share/nodejs"
 export CARGO_HOME="$HOME/.local/share/cargo/"
-export RUSTUP_HOME="$HOME/.local/share/rustuo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 export PATH=$PATH:$NODEJS_HOME/bin:$CARGO_HOME/bin;
 
 export SPTS=`tty | perl -pe's{^(.+/)(\d+)$}{$1 . ($2 + 1)}e'`
