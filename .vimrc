@@ -233,7 +233,5 @@ hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 hi Pmenu ctermfg=15 ctermbg=0
 colorscheme simple-dark
-"hi Normal ctermfg=147
-"hi Normal ctermbg=none
-"hi Visual term=reverse cterm=reverse guibg=Grey
-"hi Comment ctermfg=152
+"fix bg color in kitty
+let &t_ut=''
