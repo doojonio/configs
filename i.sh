@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-FONTS_DIR="$HOME/.local/share/fonts"
 RANGER_DIR="$HOME/.config/ranger/"
+KITTY_DIR="$HOME/.config/kitty/"
 CUR_DIR=`pwd`
 
 # rc files
@@ -15,5 +15,9 @@ ln -sf $CUR_DIR/UltiSnips ~/.vim/
 
 # ranger
 mkdir -p $RANGER_DIR && \
-ln -sf $CUR_DIR/rc.conf ~/.config/ranger/ && \
-ln -sf $CUR_DIR/rifle.conf ~/.config/ranger/;
+ln -sf $CUR_DIR/rc.conf $RANGER_DIR && \
+ln -sf $CUR_DIR/rifle.conf $RANGER_DIR;
+
+# kitty
+mkdir -p $KITTY_DIR && \
+ln -sf $CUR_DIR/kitty.conf $KITTY_DIR
